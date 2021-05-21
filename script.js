@@ -1,4 +1,3 @@
-
 class Data{
     constructor(name,species,plant_date,image){
         this.name=name
