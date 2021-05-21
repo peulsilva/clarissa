@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clarissa - sistema de IoT para monitoramento e cuidado de plantas caseiras</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="nova_planta.css">
+
+</head>
+<body>
+    <div id="navbar">
+        <div id="nav">
+            <h1>Clarissa</h1>
+        </div>
+        <div id="left_bar">
+            <a href="index.html" class="page">Cadastrar nova planta </a>
+            <a href="minhas_plantas.html">
+                Minhas plantas 
+                <div id="plants">
+
+                </div>
+            </a>
+            <a href="banco_de_dados.html">
+                Banco de dados 
+                <div id="bd">
+
+                </div>
+            </a>
+            <a href="informacoes.html">Informações do sistema</a>
+        </div>
+        <div id="bottom_left"></div>
+
+        
+    </div>
+    <div id="container" class="box">
+        <div>
+            <p id="title">Adicionar planta</p>
+            <p id="tips">Nome da planta</p>
+            <input type="text" name="Name" id="inpt" class='nome' placeholder="Nome"> 
+            <p id="tips">Nome da espécie</p>
+            <select name="Species" id="inpt" class="species">
+                <option value="1">Nome da espécie</option>
+                <option value="2">Abacateiro - Persea americana</option>
+                <option value="3">Abacaxi - Ananas comosus</option>
+                <option value="4">Agrião - Rorippa nasturtium-aquaticum</option>
+            </select>
+            <p id="tips">Data do plantio</p>
+            <input type="date" name="Date" id="inpt" class="date" >
+            <p id="tips">Foto (opcional)</p>
+            <input type="file" name="Img" id="img" class="img" accept="image/png, image/jpeg">
+
+            <section id="btn">
+                <a href="minhas_plantas.html" onclick="gravarDados()">Criar Planta</a>
+            </section>
+            
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
