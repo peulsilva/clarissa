@@ -28,6 +28,9 @@ class DB{
             console.log(id)
             localStorage.setItem(id,JSON.stringify(data))
         }
+        else{
+            alert('Dados inválidos ou já inseridos')
+        }
 
         
     }
@@ -35,12 +38,13 @@ class DB{
     validarDados(data){
         let id=eval(localStorage.getItem('id'))
         console.log('id= ',id)
+        if (data.name=='' || data.species=='')
+            return false
         for (let i=1; i<=id; i++){
             let data_i=JSON.parse(localStorage.getItem(i.toString()))
             console.log('i= ', i)
             console.log('data_i= ', data_i)
             if (data_i.name===data.name && data_i.species===data.species){
-                console.log('iguais')
                 return false
             }
 
