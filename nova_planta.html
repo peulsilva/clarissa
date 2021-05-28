@@ -14,7 +14,7 @@
             <h1>Clarissa</h1>
         </div>
         <div id="left_bar">
-            <a href="index.html" class="page">Cadastrar nova planta </a>
+            <a href="nova_planta.html" class="page">Cadastrar nova planta </a>
             <a href="minhas_plantas.html">
                 Minhas plantas 
                 <div id="plants">
@@ -40,16 +40,16 @@
             <input type="text" name="Name" id="inpt" class='nome' placeholder="Nome"> 
             <p id="tips">Nome da espécie</p>
             <select name="Species" id="inpt" class="species">
-                <option value="1">Nome da espécie</option>
-                <option value="2">Abacateiro - Persea americana</option>
-                <option value="3">Abacaxi - Ananas comosus</option>
-                <option value="4">Agrião - Rorippa nasturtium-aquaticum</option>
+                <option value="">Nome da espécie</option>
+                <option value="Abacateiro">Abacateiro - Persea americana</option>
+                <option value="Abacaxi">Abacaxi - Ananas comosus</option>
+                <option value="Agrião">Agrião - Rorippa nasturtium-aquaticum</option>
                 <option value="Girassol">Girassol - Girassol(nome cientifico)</option>
             </select>
             <p id="tips">Data do plantio</p>
             <input type="date" name="Date" id="inpt" class="date" >
-            <p id="tips">Foto (opcional)</p>
-            <input type="file" name="Img" id="img" class="img" accept="image/png, image/jpeg">
+            <p id="tips">Link para foto (opcional)</p>
+            <input type="text" id="image" >
 
             <section id="btn">
                 <a href="minhas_plantas.html" onclick="gravarDados()">Criar Planta</a>
@@ -59,7 +59,7 @@
     </div>
 
 
-    <script src="script.js"></script>
+    <script src="nova_planta.js"></script>
 </body>
 
 </html>

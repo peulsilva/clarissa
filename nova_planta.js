@@ -23,6 +23,7 @@ class DB{
         return id
     }
     gravar(data){
+        console.log(this.validarDados(data))
         if (this.validarDados(data)){
             let id=this.getId()
             console.log(id)
@@ -42,8 +43,6 @@ class DB{
             return false
         for (let i=1; i<=id; i++){
             let data_i=JSON.parse(localStorage.getItem(i.toString()))
-            console.log('i= ', i)
-            console.log('data_i= ', data_i)
             if (data_i.name===data.name && data_i.species===data.species){
                 return false
             }
@@ -60,8 +59,8 @@ function gravarDados(){
     let nome = document.querySelector('.nome').value
     let species=document.querySelector('.species').value
     let date=document.querySelector('.date').value
-    let img=document.querySelector('.img').value
-    
+    let img=document.getElementById('image').value
+  
     let data=new Data(nome, species,date, img)
     db.gravar(data)
 

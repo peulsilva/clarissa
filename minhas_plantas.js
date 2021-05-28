@@ -7,20 +7,26 @@ for (let i=1; i<=id; i++){
                 <td>${data.name}</td>
                 <td>${data.species}</td>
                 <td>${data.plant_date}</td>
-                <td><a href="index.html" onclick='dadosPage("${data.name}","${data.species}", "${data.plant_date}")'>Ir</a></td>
+                <td><a href="dados_planta.html" onclick='dadosPage("${data.name}","${data.species}", "${data.plant_date}", "${data.image}")'>Ir</a></td>
             </tr>`
 
     tabela.innerHTML+=tb
 }
 
-function dadosPage( nome,especie, plantio)
+function dadosPage( nome,especie, plantio,image)
 {
     data={
         name:nome,
         species: especie,
-        plant_date:plantio
+        plant_date:plantio,
+        image: image
     };
     sessionStorage.setItem('data', JSON.stringify(data))
+}
+
+function apagarTudo(){
+    if (confirm('Tal ação não pode ser desfeita. Continuar mesmo assim?'))
+        localStorage.clear()
 }
 
 

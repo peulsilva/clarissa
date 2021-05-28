@@ -77,6 +77,7 @@
 
 #img{
     float: right;
+    height: 40vh;
     width: 20vw;
     margin-right: 10vw;
 }

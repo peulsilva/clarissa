@@ -1,10 +1,11 @@
 let nome= document.getElementById('nome')
 let especie=document.getElementById('especie')
 let idade=document.getElementById('idade')
+let img=document.getElementById('img')
 
 let data=JSON.parse(sessionStorage.getItem('data'))
 
-console.log(data)
+
 
 sessionStorage.clear()
 
@@ -13,7 +14,9 @@ if (data.name=='')
 else{
     nome.innerHTML=data.name
 }
-    
+
+if (!data.image=='')
+    img.src=data.image
 
 especie.innerHTML= 'Espécie: '+ data.species
 
