@@ -49,5 +49,5 @@ a{
     box-shadow: 0.5rem 0.5rem 0.5rem black;
     color: white;
     background-color: red;
-    
+    cursor: pointer;
 }

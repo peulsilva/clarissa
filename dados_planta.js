@@ -5,52 +5,54 @@ let img=document.getElementById('img')
 
 let data=JSON.parse(sessionStorage.getItem('data'))
 
+function find (arr, name){
+    for (let i=0; i<arr.length; i++){
+        if (arr[i].name==name){
+            return i
+        }
+    }
+}
 
-
-sessionStorage.clear()
-
-if (data.name=='')
-    nome.innerHTML='Sem nome'
-else{
+var config = {
+    method: 'get',
+    url: 'http://127.0.0.1:8000/plantas_registradas/',
+    headers: { }
+  };
+  
+  axios(config)
+  .then(function (response) {
+    i= find(response.data,data.name)
+    data=response.data[i]
     nome.innerHTML=data.name
-}
+    especie.innerHTML= 'Espécie: '+ data.species
 
-if (!data.image=='')
-    img.src=data.image
-
-especie.innerHTML= 'Espécie: '+ data.species
-
-if (data.plant_date==''){
-    idade.innerHTML='Sem dados'
-}
-
-else{
-    date=new Date(data.plant_date)
+    date=new Date(data.date)
 
     decorrido=Date.now()-date
     decorrido=Math.floor(decorrido/(1000*3600*24))
 
     idade.innerHTML= decorrido + ' dias'
+
+    img.src=data.image
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+
+function Delete(){
+        var config = {
+        method: 'delete',
+        url: 'http://127.0.0.1:8000/plantas_registradas/'+data.id+'/',
+        headers: { }
+      };
+      
+      axios(config)
+      .then(function (response) {
+        return
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+      
 }
-
-
-function deletarPlanta(){
-    let id=eval(localStorage.getItem('id'))
-    for (let i=1; i<=id; i++){
-        let data_i=JSON.parse(localStorage.getItem(i.toString()))
-        if (data_i.name==data.name && data_i.plant_date==data.plant_date && data_i.species==data.species){
-            localStorage.removeItem(i.toString())
-            
-            for (j=i+1;j<=id;j++)
-            {
-                let data_j=JSON.parse(localStorage.getItem(j.toString()))
-                localStorage.removeItem(j.toString())
-                localStorage.setItem((j-1).toString(),JSON.stringify(data_j))
-            }
-            id-=1
-            localStorage.setItem('id',id.toString())
-            return
-        }
-
-    }
-}
+  

@@ -37,9 +37,9 @@
         <div>
             <p id="title">Adicionar planta</p>
             <p id="tips">Nome da planta</p>
-            <input type="text" name="Name" id="inpt" class='nome' placeholder="Nome"> 
+            <input type="text" name="Name" id="name" class='inpt' placeholder="Nome"> 
             <p id="tips">Nome da espécie</p>
-            <select name="Species" id="inpt" class="species">
+            <select name="Species" id="species" class="inpt">
                 <option value="">Nome da espécie</option>
                 <option value="Abacateiro">Abacateiro - Persea americana</option>
                 <option value="Abacaxi">Abacaxi - Ananas comosus</option>
@@ -47,19 +47,23 @@
                 <option value="Girassol">Girassol - Girassol(nome cientifico)</option>
             </select>
             <p id="tips">Data do plantio</p>
-            <input type="date" name="Date" id="inpt" class="date" >
-            <p id="tips">Link para foto (opcional)</p>
-            <input type="text" id="image" >
+            <input type="date" name="Date" id="date" class="inpt" >
+            <p id="tips">Foto (opcional)</p>
+
+            <input type="file" accept=".png, .jpg, .jpeg" id="image" >
 
             <section id="btn">
-                <a href="minhas_plantas.html" onclick="gravarDados()">Criar Planta</a>
+                <a id ='criar_planta' href="minhas_plantas.html" onclick="gravarApi()">Criar Planta</a>
             </section>
             
         </div>
     </div>
 
 
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="nova_planta.js"></script>
+
 </body>
 
 </html>
